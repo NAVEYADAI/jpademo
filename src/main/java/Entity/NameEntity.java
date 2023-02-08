@@ -3,7 +3,7 @@ package Entity;
 import jakarta.persistence.*;
 
 @Entity
-@NamedQuery(name = "NameEntity.byDept",query = "select e from NameEntity e where e.fName=?1")
+@NamedQuery(name = "NameEntity.byDept",query = "select e from NameEntity e")
 @Table(name = "name", schema = "public", catalog = "testing")
 public class NameEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -69,4 +69,13 @@ public class NameEntity {
         result = 31 * result + (lName != null ? lName.hashCode() : 0);
         return result;
     }
+    @Override
+    public String toString() {
+        return "NameEntity{" +
+                "id=" + id +
+                ", fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                '}';
+    }
+
 }

@@ -68,4 +68,13 @@ public class EmployeeEntity {
         result = 31 * result + (lName != null ? lName.hashCode() : 0);
         return result;
     }
+    @Override
+    public String toString() {
+        return "EmployeeEntity{" +
+                "id=" + id +
+                ", fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                '}';
+    }
+
 }

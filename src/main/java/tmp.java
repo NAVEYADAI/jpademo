@@ -1,5 +1,8 @@
 import Entity.EmployeeEntity;
 import Entity.NameEntity;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
+import jakarta.persistence.Table;
 
 public class tmp {
     /*
@@ -25,6 +28,13 @@ public class tmp {
         dataEntity.setfName(FName);
         dataEntity.setlName(LName);
         return dataEntity;
+    }
+
+
+    public static void printSumOfRow(EntityManager entityManager , String nameOfTable){
+        Query qu = entityManager.createNativeQuery("select count(*) from name");
+//        qu.setParameter(1,nameOfTable);
+        System.out.println(qu.getSingleResult());
     }
 
 
